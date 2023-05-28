@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
 
     public int startingEnemyCount = 5;
     public int enemyCountIncrement = 2;
-    public int currentEnemyCount;
+    private int currentEnemyCount;
     public int maxEnemyCount = 300;
 
     public float timeBetweenSpawns = 5f;
@@ -36,8 +36,8 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
 
-        weatherTracker.UpdateWeather(SkillType.None);
-        
+        weatherTracker.UpdateWeather(ChargeType.FIRE); // make a variable to change depedning on jump dimension used
+
 
         if (spawnCountdown <= 0)
         {

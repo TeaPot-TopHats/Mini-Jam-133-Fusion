@@ -3555,10 +3555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46934f74b30e3e41a325a62e740ce6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingEnemyCount: 1
-  enemyCountIncrement: 23
-  currentEnemyCount: 0
-  maxEnemyCount: 300
+  startingEnemyCount: 20
+  enemyCountIncrement: 4000
+  maxEnemyCount: 2147483647
   timeBetweenSpawns: 1
   spawnCountdown: 0
   spawnPoints:
@@ -20071,6 +20070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6340513915766126540, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8940701586526447376, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -65824,11 +65827,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592192826}
   m_CullTransparentMesh: 1
---- !u!20 &1600998519 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8940701587141945141, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
-  m_PrefabInstance: {fileID: 1342743652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1605197175
 GameObject:
   m_ObjectHideFlags: 0
@@ -66662,7 +66660,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 1600998519}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

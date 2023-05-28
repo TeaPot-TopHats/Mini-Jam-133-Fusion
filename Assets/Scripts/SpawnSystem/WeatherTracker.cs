@@ -11,7 +11,7 @@ public class WeatherTracker
     {
         return currentWeather;
     }
-    public void UpdateWeather(SkillType skillType)
+    public void UpdateWeather(ChargeType skillType)
     {
         /*
         int randomIndex = Random.Range(0, 3);
@@ -19,13 +19,13 @@ public class WeatherTracker
         */
         switch (skillType)
         {
-            case SkillType.FireSlash:
+            case ChargeType.FIRE:
                 currentWeather = WeatherType.Sunny;
                 break;
-            case SkillType.IceSlash:
+            case ChargeType.ICE:
                 currentWeather = WeatherType.Rainy;
                 break;
-            case SkillType.LightningSlash:
+            case ChargeType.ELECTRIC:
                 currentWeather = WeatherType.Stormy;
                 break;
             default:
