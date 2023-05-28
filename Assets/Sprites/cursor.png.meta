@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6deb1b89df2b2a6449755d35b1e27750
+guid: bff9c6f9a17fede468377f54cac07eed
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,11 +42,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.526306, y: 0.32161054}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -105,22 +105,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sword_ii_2_0
+      name: cursor_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 95
-        width: 1013
-        height: 4537
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 7
+        y: 200
+        width: 18
+        height: 18
+      alignment: 9
+      pivot: {x: 0.50891685, y: 0.37921226}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9f7262af60a2e48aa3b13717aa78d4
-      internalID: 396395999
+      spriteID: d10b8776b3453a549bc396ec69cffb32
+      internalID: 1375247633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 166
+        width: 23
+        height: 23
+      alignment: 9
+      pivot: {x: 0.4889203, y: 0.37455285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a45ae3b4d3695499fada7b9843fba3
+      internalID: 427236514
       vertices: []
       indices: 
       edges: []
@@ -129,14 +150,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sword_ii_2_0: 396395999
+      cursor_0: -1243986591
+      cursor_1: 1498739693
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
