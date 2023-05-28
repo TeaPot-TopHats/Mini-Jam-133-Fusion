@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeatherType
+public enum SkillType
 {
-    Sunny,
-    Rainy,
-    Stormy,
-    All
+   FireSlash,
+   IceSlash,
+   LightningSlash,
+   None
 }
