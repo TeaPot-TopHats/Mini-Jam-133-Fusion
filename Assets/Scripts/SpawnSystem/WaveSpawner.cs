@@ -6,7 +6,8 @@ using UnityEngine;
 public class Wave
 {
     public string name;
-    public Transform enemy;
+   // public Transform enemy;
+    public EnemyType enemyType;
     public int count;
     public float rate;
 
@@ -18,6 +19,8 @@ public enum SpawnState
     waiting,
     counting
 }// end of enum
+
+
 public class WaveSpawner : MonoBehaviour
 {
 
@@ -38,7 +41,7 @@ public class WaveSpawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
         if (spawnPoints.Length == 0)
         {
-            Debug.Log("No spawn points are found");
+            Debug.LogWarning("No spawn points are found");
         }
     }// end of start
 
@@ -131,7 +134,7 @@ public class WaveSpawner : MonoBehaviour
         for( int i = 0; i < _wave.count; i++)
         {
             Debug.Log("Spawning Enemy");
-            SpawnEnemy(_wave.enemy);
+            SpawnEnemy(_wave.enemyType);
             yield return new WaitForSeconds(1f / _wave.rate);
         }
 
@@ -142,7 +145,7 @@ public class WaveSpawner : MonoBehaviour
 
     /*
      * 
-     */
+     
     void SpawnEnemy(Transform _enemy)
     {
 
@@ -154,5 +157,38 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(_enemy, _sp.position, _sp.rotation);
 
     }// end of Spawn Enemy
-    
+    */
+
+    void SpawnEnemy(EnemyType enemyType)
+    {
+        Debug.Log("Spawning enemy: " + enemyType.ToString());
+
+        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        GameObject enemyPrefab = GetEnemyPrefab(enemyType);
+        Instantiate(enemyPrefab, _sp.position, _sp.rotation);
+    }
+
+    GameObject GetEnemyPrefab(EnemyType enemyType)
+    {
+        GameObject prefab = null;
+
+        switch (enemyType)
+        {
+            case EnemyType.Fire:
+                prefab = Resources.Load<GameObject>("FireEnemyPrefab");
+                break;
+            case EnemyType.Ice:
+                prefab = Resources.Load<GameObject>("IceEnemyPrefab");
+                break;
+            case EnemyType.Electric:
+                prefab = Resources.Load<GameObject>("ElectricEnemyPrefab");
+                break;
+            default:
+                Debug.LogError("Unknown enemy type: " + enemyType.ToString());
+                break;
+        }
+
+        return prefab;
+    }
+
 } //end of WaveSpawner class
