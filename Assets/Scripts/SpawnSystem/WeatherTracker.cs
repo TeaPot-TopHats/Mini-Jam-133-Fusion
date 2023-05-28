@@ -11,14 +11,27 @@ public class WeatherTracker
     {
         return currentWeather;
     }
-
-    public void UpdateWeather()
+    public void UpdateWeather(SkillType skillType)
     {
-        // Implement Weather/Map change logic here to update the current weather
-        
-        // For the sake of example, let's assume the weather changes randomly
+        /*
         int randomIndex = Random.Range(0, 3);
         currentWeather = (WeatherType)randomIndex;
+        */
+        switch (skillType)
+        {
+            case SkillType.FireSlash:
+                currentWeather = WeatherType.Sunny;
+                break;
+            case SkillType.IceSlash:
+                currentWeather = WeatherType.Rainy;
+                break;
+            case SkillType.LightningSlash:
+                currentWeather = WeatherType.Stormy;
+                break;
+            default:
+                currentWeather = WeatherType.All;
+                break;
+        }
     }
 }
 
