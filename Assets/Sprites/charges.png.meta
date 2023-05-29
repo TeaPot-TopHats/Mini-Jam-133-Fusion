@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f75b59c21a0e38f4ab646b485bdbd544
+guid: 8a4ec22507ddc0047b7da20074a0f1c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,133 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: slimeIdle
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 5
-        width: 16
-        height: 10
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f460fbaa38c882d4eb512d87d5346d62
-      internalID: 1679610107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlimeAttack1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 3
-        width: 15
-        height: 12
-      alignment: 9
-      pivot: {x: 0.53333336, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3677936f7c8af44c96e588229c263a8
-      internalID: -1948399197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlimeInjured
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 6
-        width: 15
-        height: 9
-      alignment: 9
-      pivot: {x: 0.53333336, y: 0.33333334}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20358ea4df654874ab67746c6cdb53dc
-      internalID: -1810992693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlimeMove
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 6
-        width: 18
-        height: 9
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.33333334}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71310c55a719f024f9823091e9331c14
-      internalID: -1657554172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlimeAttack2
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 0
-        width: 19
-        height: 15
-      alignment: 9
-      pivot: {x: 0.42105263, y: 0.2}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6b00151428243e41a374c7e43c249e9
-      internalID: -1433380958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlimeDead
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 9
-        width: 15
-        height: 6
-      alignment: 9
-      pivot: {x: 0.53333336, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 531c3b82934b16e42bd2e88c66b234db
-      internalID: -301474956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -264,13 +138,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SlimeAttack1: -1948399197
-      slimeIdle: 1679610107
-      SlimeMove: -1657554172
-      SlimeAttack2: -1433380958
-      SlimeInjured: -1810992693
-      SlimeDead: -301474956
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

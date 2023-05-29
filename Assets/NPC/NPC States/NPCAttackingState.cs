@@ -16,7 +16,7 @@ public class NPCAttackingState : IState
     public void Enter()
     {
         Debug.LogWarning("Enter Attack");
-        //start attacking animation
+        StateMachine.AnimationHandler.ChangeAnimationState("SlimeAttack");
         Stats.atkCoolDown = 0;
 
     }
@@ -45,5 +45,6 @@ public class NPCAttackingState : IState
     public void AttackEnded()
     {
         StateMachine.RevertState();
+        //set animation to idle;
     }
 }
