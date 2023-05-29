@@ -195,7 +195,6 @@ public class PlayerData : MonoBehaviour
 	private void TakeDamage(int damage)
 	{
 		Health -= damage;
-		Health = 0;
 		CheckDeath();
 	}
 	
@@ -209,7 +208,8 @@ public class PlayerData : MonoBehaviour
 			InputH.canLook = false;
 			InputH.canAttack = false;
 			InputH.CursorLimit = false;
-			
+
+            Health = 0;
 			Anim.SetTrigger("Death");
 		}
 	}

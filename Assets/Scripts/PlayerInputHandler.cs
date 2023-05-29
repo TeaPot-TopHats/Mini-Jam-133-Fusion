@@ -151,7 +151,7 @@ public class PlayerInputHandler : MonoBehaviour
 
 	public void OnFire(InputAction.CallbackContext context)
 	{
-		if(canAttack && context.started)
+		if(canAttack && context.started && canMove)
 		{
 			// Debug
 			Debug.Log("BFA: Melee");
@@ -189,7 +189,7 @@ public class PlayerInputHandler : MonoBehaviour
 	public void OnSecondary(InputAction.CallbackContext context)
 	{
 		
-		if (canAttack && context.started && CanWeSecondary())
+		if (canAttack && context.started && CanWeSecondary() && canMove)
 		{
 			// Debug
 			Debug.Log("BFA: Melee");
@@ -320,7 +320,7 @@ public class PlayerInputHandler : MonoBehaviour
 	
 	public void OnSpace(InputAction.CallbackContext context)
 	{
-		if(context.started)
+		if(context.started && canMove)
 		{
 			Data.JumpDimension();
 		}
