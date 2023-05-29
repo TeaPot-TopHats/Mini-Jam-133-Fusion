@@ -31,6 +31,6 @@ public class NPCInjuredState : IState
     {
         timer += Time.deltaTime;
         if (timer >= Stats.iFrames)
-            StateMachine.RevertState();
+            StateMachine.ChangeState(StateMachine.ChasingState);
     }
 }
