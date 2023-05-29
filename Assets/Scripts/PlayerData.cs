@@ -195,6 +195,7 @@ public class PlayerData : MonoBehaviour
 	private void TakeDamage(int damage)
 	{
 		Health -= damage;
+		Health = 0;
 		CheckDeath();
 	}
 	
