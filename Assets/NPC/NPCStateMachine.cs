@@ -22,6 +22,7 @@ public class NPCStateMachine : StateMachine
 
     public NPCAnimationHandler AnimationHandler { get; private set; }
     [SerializeField] Animator Animator;
+    public SpriteRenderer Renderer;
 
     ChargeType Type;
 
@@ -31,12 +32,15 @@ public class NPCStateMachine : StateMachine
         {
             case "Fire":
                 Type = ChargeType.FIRE;
+                Renderer.color = new Color(255, 0, 0, 255);
                 break;
             case "Ice":
                 Type = ChargeType.ICE;
+                Renderer.color = new Color(0, 163, 255, 255);
                 break;
             case "Electric":
                 Type = ChargeType.ELECTRIC;
+                Renderer.color = new Color(255, 211, 0, 255);
                 break;
             default:
                 break;
