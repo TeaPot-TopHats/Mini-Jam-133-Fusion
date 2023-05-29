@@ -30,7 +30,7 @@ public class NPCChasingState : IState
     public void FixedTick()
     {
         MovementHandler.Move();
-        if (StateMachine.PlayerInRange())
+        if (StateMachine.PlayerInRange() && Stats.atkCoolDown == Stats.StartingStat.initAtkCoolDown)
             StateMachine.ChangeState(StateMachine.AttackingState);
     }
 
