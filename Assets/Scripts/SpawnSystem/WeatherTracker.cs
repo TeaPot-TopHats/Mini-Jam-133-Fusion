@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class WeatherTracker
+public class WeatherTracker : MonoBehaviour
 {
-    private WeatherType currentWeather;
+    [SerializeField] private ChargeType currentWeather = ChargeType.FIRE;
 
-    public WeatherType GetCurrentWeather()
+    public ChargeType GetCurrentWeather()
     {
         return currentWeather;
     }
@@ -20,16 +20,16 @@ public class WeatherTracker
         switch (skillType)
         {
             case ChargeType.FIRE:
-                currentWeather = WeatherType.Sunny;
+                currentWeather = ChargeType.FIRE;
                 break;
             case ChargeType.ICE:
-                currentWeather = WeatherType.Rainy;
+                currentWeather = ChargeType.ICE;
                 break;
             case ChargeType.ELECTRIC:
-                currentWeather = WeatherType.Stormy;
+                currentWeather = ChargeType.ELECTRIC;
                 break;
             default:
-                currentWeather = WeatherType.All;
+                currentWeather = ChargeType.FIRE;
                 break;
         }
     }
