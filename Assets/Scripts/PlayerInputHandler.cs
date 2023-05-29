@@ -184,6 +184,11 @@ public class PlayerInputHandler : MonoBehaviour
 			Data.Anim.SetTrigger("Attack");			
 			StartCoroutine(Cooldown());
 		}
+		
+		else if(!canAttack && context.started && !canMove && isDead)
+		{
+			// Scene stuff
+		}
 	}
 
 	public void OnSecondary(InputAction.CallbackContext context)
