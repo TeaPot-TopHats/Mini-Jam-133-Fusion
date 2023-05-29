@@ -20,8 +20,7 @@ public class PlayerInputHandler : MonoBehaviour
 	public Vector2 AimVector;// Stores the vector that points to where we are aiming
 	public float AimAngle;  // We convert the AimVector to location and we put the angle where we are aiming here in degrees
 	// private Quaternion rotation;
-	
-	[SerializeField] private GameObject WeaponObject;
+
 	
 	[SerializeField] private GameObject Cursor;
 	private Transform CursorTransform;
@@ -54,7 +53,7 @@ public class PlayerInputHandler : MonoBehaviour
 	float currentAngle;
 	Collider2D[] enemyColliders;
 	
-	public float MeleeRange = 30f;
+	public float MeleeRange = 90f;
 	public float MeleeReach = 2f;
 	public float AttackCooldown = 1f;
 
