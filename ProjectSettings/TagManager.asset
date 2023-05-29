@@ -7,6 +7,9 @@ TagManager:
   - Fire
   - Ice
   - Electric
+  - Map
+  - Map2
+  - Map3
   layers:
   - Default
   - TransparentFX
