@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 150745575}
   m_Layer: 0
   m_Name: Collision_Object_Tilemap
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4161,7 +4161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248363294}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d46934f74b30e3e41a325a62e740ce6f, type: 3}
   m_Name: 
@@ -4193,14 +4193,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248363294}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd0959d08d9e2e746bf8705fdbdf24ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireEnemyPrefab: {fileID: 5321140378590933821, guid: ea1dbe8c026cca24689a2ba321e57e94, type: 3}
-  iceEnemyPrefab: {fileID: 5321140378590933821, guid: 7058d52acfbec8a42be06878c4af0ac0, type: 3}
-  electricEnemyPrefab: {fileID: 5321140378590933821, guid: 94919c578af8b2a40b6686fd0950bb72, type: 3}
+  fireEnemyPrefab: {fileID: 5214729937338868898, guid: 8cd2f319b8640a04f873d799e11b37f2, type: 3}
+  iceEnemyPrefab: {fileID: 5214729937338868898, guid: 8cd2f319b8640a04f873d799e11b37f2, type: 3}
+  electricEnemyPrefab: {fileID: 5214729937338868898, guid: 8cd2f319b8640a04f873d799e11b37f2, type: 3}
   allEnemyPrefap: []
   fireEnemies: []
   iceEnemies: []
@@ -6596,7 +6596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &531760521
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8829,6 +8829,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945401040}
   m_CullTransparentMesh: 1
+--- !u!1 &949494410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 165264367, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+  m_PrefabInstance: {fileID: 1342743652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &966171524
 GameObject:
   m_ObjectHideFlags: 0
@@ -9215,7 +9220,7 @@ GameObject:
   - component: {fileID: 1046508639}
   m_Layer: 0
   m_Name: Decoration_Tilemap
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23803,6 +23808,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2024453137, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6340513915766126540, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -23813,7 +23822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6340513915766126561, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6340513916736047012, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: m_Color.b
@@ -24433,7 +24442,7 @@ GameObject:
   - component: {fileID: 1409811311}
   m_Layer: 0
   m_Name: Base_Tilemap
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69259,6 +69268,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!20 &1442266676 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6340513917414603356, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+  m_PrefabInstance: {fileID: 1342743652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443330044
 GameObject:
   m_ObjectHideFlags: 0
@@ -69296,6 +69310,67 @@ RectTransform:
   m_AnchoredPosition: {x: -5.000046, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1444505632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9067575702893179360, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 949494410}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.893
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179361, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179365, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_Name
+      value: RealCursor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
 --- !u!1 &1462090669
 GameObject:
   m_ObjectHideFlags: 0
@@ -69654,18 +69729,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248363298}
-        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
-        m_MethodName: LockMouseCursor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1336270871}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -69987,7 +70050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Select Charges: 1/2/3, scroll'
+  m_text: 'Select Charges: scroll wheel'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -70918,8 +70981,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000033379, y: -0.0000076294}
-  m_SizeDelta: {x: 801.17, y: 66.99}
+  m_AnchoredPosition: {x: -0.00000095367, y: -0.0000011921}
+  m_SizeDelta: {x: 786.24, y: 66.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1810596027
 MonoBehaviour:
@@ -70941,7 +71004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Select Charges: 1/2/3, scroll'
+  m_text: 'Select Charges: scroll wheel'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -71178,7 +71241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1847978408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71193,7 +71256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACYn+vBqa5GUwIAAA8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF9VEtv2kAQ/itoz01loClJb61DSA8EFFLl4stgj/GK9a61D57iv3d2bWOHSj0gxt98M/PNwz4zLk2FqVV6pnk2VxmyHwPmbfZl0Dlf8AAbJVf8hC3ng2e28CQInDewXBE+9GFGlWg1T3/KjfDkiEAnea50Oc02GCtjDcE5CIPk0sr6aEnQecAO9Hf36EOOZI0m3jqR9RgNLmSmKC3qjtoSW1rNcjIVUFaYeckdediyhzVNUjMNwwtPlRDcNEqYPVah0xgq46gPImQcqLNQ3vML5JvCepX94EWeG7SNJA3HJ65pQHVW9kvVUyvBbGtdOxAOr8LrlPN/vHfD4M61Kl/aqsPIV7AFT7dvcEzB2N5Q+/DTZ9lO7kFsYS3wo0D5qmZaOZmR02rnQ53B0VP3eG0sLjDddngt9QZ01X9XcwmtH2LBy7VHvn6rgZVQYdhh76hpLb9Jb7gK02Qg1Iv4Y/AdNv3zaRzPXBtLrqZJ6dWtldOeyqZhZL4ZZ2OlJQa40VyhBGGPS0pjb/d34+uVvfE8g39RmuKNr73/m5AAd/wounEt1f66K1Oo/RxNsXBWcImdaO94pTnFSsr6vPozacNWTueQ9sI2jmefL4vd5494v4ZRNHl4oB/cfY/W4zyFyTga5wDjEQunxyX1CWJZC23GQ1uTXXJJZ9Z+PwYzDVU49UzDfsZPpeqNnMtcrVKNKBd1hqtw1FSEXslsmnEa0Aqt5TLsm50TJlS6xSy5JkpCp9OD1ZB0WRJW8Z2yHklYHD4YCfPw9ZSXGncc9754m+zCLn8BUEsDBBQAAAgIAACYn+tr45NWbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSaZplqmlSopGBuYUFECfqmhkkGaclJ5obGxinJSYaGynFAtWXVBak+iXmpkL0BCSWZKRl5qVk5qXruRdlpriDjFaKrQUAUEsBAi0AFAAACAgAAJif68GprkZTAgAADwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJif62vjk1ZsAAAAeAAAAAkAJAAAAAAAAAAAAAAAoAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABXAwAAAAA=
+    dataString: UEsDBBQAAAgIAACYn+s13xifVAIAABIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzqVjoGmS3lpDSA8kTEgnF18We401yJJHHwHC8N+7km3suNMDg/ze29XbD/vMuDQVplbppebZSmXIfoyYP7Mvo458xCPslNzwD2w1bzyzhRdB0LyA5YrwiQ8zqkSrefpT7oQXRwQ6yXOly0W2w1gZawjOQRgkSivroyVB5xE70t/43oec6DS99acPOt1HowsdU5QWdSdtha2sVjmZCigrzLzlTjyJWjmdglBSOY3GW0+VENw0Xpg9VaHWGCrjqBISZByotmDA6wvku8J6n/3g5zw3aBtTGk5zrqlFdVb2S9V9K8Hsa2fvIBxerdcpV/+w40mgc63Kx/bWuh5b8HT/AqcUjO21tQ/PP9t28gBiD1uBbwXKJ7XUysmMSKudD3UGp/Pu8VpYXGC67/Da6gB01f+H42u4hNqPseDl1lNfv9XARqjQ7TB61DSX32Q4LIZpUhDqXfwx+Aq7/gY1xAPXxhLVVCm9va1y2kvZIvTMV+NsrLTEADemK5Qg7GlNaexwgAOud+2AeQD/rjSXN1z7CgxCAtzpo2hArdXhOixTqMMKTfHsrOASO9OeeKI+xUrKer/6PWnDNk7nkPbCdo5nn1eL3eT3eLOFaXR7d0c/GH+PtrM8hdtZNMsBZlMWdo9LqhPEujbatIemJrvkkvas/YSMlhqqsOuZhsOSf5Sq13Iuc7VJNaJ8rjNcjaOmS+idzBYZpwZt0Fouw7zZOWFCpXvMkmuiJFS6OFoNSZclYRV/V9YjCYvDNyNhHr7u8lrjO8eDv7xNdmGXv1BLAwQUAAAICAAAmJ/ra+OTVmwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0kmmaZappUqKRgbmFBRAn6poZJBmnJSeaGxsYpyUmGhspxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAACYn+s13xifVAIAABIFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+tr45NWbAAAAHgAAAAJACQAAAAAAAAAAAAAAKECAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAWAMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -71696,7 +71759,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 531760522}
+  m_Camera: {fileID: 1442266676}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class AbilityBar : MonoBehaviour
 {
+
     public Button button;
     public Button button2;
     public Button button3;
@@ -14,22 +15,22 @@ public class AbilityBar : MonoBehaviour
     private Button selectedButton;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if(playerData.SelectedCharge == ChargeType.FIRE)
         {
-            playerData.SelectedCharge = ChargeType.FIRE;
-            SelectButton(button);
+            // playerData.SelectedCharge = ChargeType.FIRE;
+            button.Select();
             Debug.Log("The selected charge is: " + playerData.SelectedCharge);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (playerData.SelectedCharge == ChargeType.ICE)
         {
-            playerData.SelectedCharge = ChargeType.ICE;
-            SelectButton(button2);
+            //playerData.SelectedCharge = ChargeType.ICE;
+            button2.Select();
             Debug.Log("The selected charge is: " + playerData.SelectedCharge);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (playerData.SelectedCharge == ChargeType.ELECTRIC)
         {
-            playerData.SelectedCharge = ChargeType.ELECTRIC;
-            SelectButton(button3);
+            //playerData.SelectedCharge = ChargeType.ELECTRIC;
+            button3.Select();
             Debug.Log("The selected charge is: " + playerData.SelectedCharge);
         }
 
