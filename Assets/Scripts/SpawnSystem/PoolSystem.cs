@@ -27,7 +27,6 @@ public class PoolSystem : MonoBehaviour
         enemyPool.Add(EnemyType.Ice, iceEnemies);
         enemyPool.Add(EnemyType.Electric, electricEnemies);
         enemyPool.Add(EnemyType.ALL, allEnemies);
-
     }
 
     private void Update()
