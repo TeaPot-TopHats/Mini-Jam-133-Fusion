@@ -36,10 +36,6 @@ public class ChargeBehavior : MonoBehaviour
 				Player.AddCharge(ChargeType.ELECTRIC);
 				Destroy(gameObject);
 			}
-			else if(Player.FireCharge == Player.MAX_CHARGES && Player.IceCharge == Player.MAX_CHARGES && Player.ElectricCharge == Player.MAX_CHARGES)
-			{
-				Debug.LogWarning("Can't pick up");
-			}
 			else
 			{
 				Debug.LogError("ChargeBehavior: Something went very wrong");
