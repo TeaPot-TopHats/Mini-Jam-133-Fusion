@@ -47,9 +47,10 @@ GameObject:
   - component: {fileID: 5214729937338868907}
   - component: {fileID: 5214729937338868906}
   - component: {fileID: 5214729937338868905}
+  - component: {fileID: 1603300556}
   m_Layer: 0
   m_Name: Basic Enemy
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1679610107, guid: f75b59c21a0e38f4ab646b485bdbd544, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,6 +139,7 @@ MonoBehaviour:
   Pathfinder: {fileID: 5214729937338868905}
   RB: {fileID: 5214729937338868907}
   RangeTransformer: {fileID: 5214729936511042804}
+  Animator: {fileID: 1603300556}
 --- !u!114 &5214729937338868899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingStat: {fileID: 11400000, guid: 90e12e5a79372ea4e94b20b71b7d1e05, type: 2}
   health: 0
-  attack: 0
+  weakAttack: 0
+  normalAttack: 0
+  strongAttack: 0
   speed: 0
   defense: 0
   atkCoolDown: 0
@@ -224,8 +228,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.3}
+    oldSize: {x: 1, y: 0.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -250,3 +254,23 @@ MonoBehaviour:
   SeekerComponent: {fileID: 5214729937338868904}
   RB: {fileID: 5214729937338868907}
   Target: {fileID: 0}
+--- !u!95 &1603300556
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214729937338868898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9f409969e9d7354d8d39a56d19dc6e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

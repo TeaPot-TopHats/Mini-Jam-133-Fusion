@@ -15,14 +15,9 @@ public class NPCMovementHandler
 
     public void Move()
     {
-        Debug.Log("Moving");
         Vector2 Force = speed * Time.deltaTime * Direction;
         RB.velocity = Force;
-        Debug.Log("Velocity: " + RB.velocity);
-        Debug.Log("Force: " + Force);
-        Debug.Log("Speed: " + speed);
-        Debug.Log("Time: " + Time.deltaTime);
-        Debug.Log("Direction: " + Direction);
+
     }
 
     public void StopMoving()

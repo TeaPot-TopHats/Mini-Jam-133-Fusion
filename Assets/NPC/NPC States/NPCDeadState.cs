@@ -16,7 +16,7 @@ public class NPCDeadState : IState
 
     public void Enter()
     {
-        //change to dead sprite
+        StateMachine.AnimationHandler.ChangeAnimationState("SlimeDead");
     }
 
     public void Exit()

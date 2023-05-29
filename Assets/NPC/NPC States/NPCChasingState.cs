@@ -17,7 +17,7 @@ public class NPCChasingState : IState
 
     public void Enter()
     {
-        //change to running animation
+        StateMachine.AnimationHandler.ChangeAnimationState("SlimeMove");
         MovementHandler.SetSpeed(Stats.speed);
         Debug.Log("Enter Chase");
     }

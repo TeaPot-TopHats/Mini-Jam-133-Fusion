@@ -50,12 +50,13 @@ public class NPCPathFinding : MonoBehaviour
             currentWaypoint++;
 
         distanceFromPlayer = Vector2.Distance(RB.position, Target.position);
-        /* This is just to change direction of sprite
-        if (target.transform.localPosition.x < transform.localPosition.x && GetComponent<Transform>().localScale.x > 0)
-            GetComponent<Transform>().localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        else if (target.transform.localPosition.x > transform.localPosition.x && GetComponent<Transform>().localScale.x < 0)
-            GetComponent<Transform>().localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        */
+
+        if (Direction.x > 0.5)
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        else if (Direction.x > -0.5)
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+       
+        
     }
 
     void OnPathComplete(Path p)

@@ -14,7 +14,7 @@ public class NPCInjuredState : IState
     }
     public void Enter()
     {
-        //change to injured sprite
+        StateMachine.AnimationHandler.ChangeAnimationState("SlimeInjured");
     }
 
     public void Exit()

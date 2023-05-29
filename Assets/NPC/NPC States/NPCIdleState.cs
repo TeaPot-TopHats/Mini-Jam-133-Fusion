@@ -16,6 +16,7 @@ public class NPCIdleState : IState
     {
         //set to idle animation
         Debug.Log("Enter Idle");
+        StateMachine.AnimationHandler.ChangeAnimationState("SlimeIdle");
     }
 
     public void Exit()
