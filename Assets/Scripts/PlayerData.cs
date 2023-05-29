@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerData : MonoBehaviour
 {
 	public int Health = 20;
@@ -40,6 +41,9 @@ public class PlayerData : MonoBehaviour
 	GameObject map1;
 	GameObject map2;
 	GameObject map3;
+
+	
+	public bool isDead;
 
 	private void Start()
 	{
@@ -211,6 +215,10 @@ public class PlayerData : MonoBehaviour
 
             Health = 0;
 			Anim.SetTrigger("Death");
+
+			isDead = true;
+			
+			
 		}
 	}
 	

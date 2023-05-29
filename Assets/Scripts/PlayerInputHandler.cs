@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public class PlayerInputHandler : MonoBehaviour
 	// Damage Calculation
 	private ChargeType Dimension;
 	private ChargeType EnemyType;
+
+	public AudioManager AM;
 
 	private void Start()
 	{
@@ -184,10 +187,14 @@ public class PlayerInputHandler : MonoBehaviour
 			Data.Anim.SetTrigger("Attack");			
 			StartCoroutine(Cooldown());
 		}
-		
-		else if(!canAttack && context.started && !canMove && isDead)
-		{
-			// Scene stuff
+		else if (!canAttack && context.started && !canMove && Data.isDead)
+		{
+			Time.timeScale = 0;
+
+			//Scene scene = SceneManager.GetActiveScene(); 
+			SceneManager.LoadScene("Main");
+			AM.Stop("HuntingYourMom");
+			AM.Play("Theme_Test");
 		}
 	}
 

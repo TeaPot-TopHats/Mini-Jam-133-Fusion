@@ -174,7 +174,15 @@ MonoBehaviour:
     source: {fileID: 0}
     clipName: Theme_Test
     audioClip: {fileID: 8300000, guid: 33870aaca7e14b64eb9914f741f2d331, type: 3}
-    isLoop: 0
+    isLoop: 1
+    playOnAwake: 1
+    volume: 1
+    pitch: 1
+  - audioType: 1
+    source: {fileID: 0}
+    clipName: HuntingYourMom
+    audioClip: {fileID: 8300000, guid: 3cc55944fc538f24180c5a72fb15047f, type: 3}
+    isLoop: 1
     playOnAwake: 0
     volume: 1
     pitch: 1
@@ -50391,6 +50399,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6340513915766126544, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340513915766126544, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6340513915766126546, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -50411,6 +50427,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6340513915766126549, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: AM
+      value: 
+      objectReference: {fileID: 51574128}
     - target: {fileID: 6340513915766126549, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: RealCursor
       value: 
@@ -71946,6 +71966,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 51574128}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HuntingYourMom
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 51574128}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Theme_Test
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2008385807
