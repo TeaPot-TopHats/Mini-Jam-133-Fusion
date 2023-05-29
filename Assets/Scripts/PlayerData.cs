@@ -46,11 +46,28 @@ public class PlayerData : MonoBehaviour
 		// WeatherT = GameManager.GetComponent<WeatherTracker>();
 	}
 
+	private void Update()
+	{
+		if(SelectedCharge == ChargeType.FIRE)
+		{
+			Sprite.color = new Color(255, 0, 0, 255);
+		}
+		else if (SelectedCharge == ChargeType.ICE)
+		{
+			Sprite.color = new Color(0, 163, 255, 255);
+		}
+        else if (SelectedCharge == ChargeType.ELECTRIC)
+        {
+            Sprite.color = new Color(255, 211, 0, 255);
+        }
+	}
+	
 	private void FixedUpdate()
 	{
 		SpriteFlipCheck();
 		MovementAnimationCheck();
 	}
+	
 
 	private void SpriteFlipCheck()
 	{
@@ -301,7 +318,7 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.ELECTRIC);
 			}
-            Anim.SetTrigger("Jump");
+			Anim.SetTrigger("Jump");
 		}
 		else
 		{
