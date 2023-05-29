@@ -49327,6 +49327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RealCursor
       objectReference: {fileID: 0}
+    - target: {fileID: 9067575702893179366, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebbab18c101ea5e44b231fbc33917ea8, type: 3}
 --- !u!1 &849765429
