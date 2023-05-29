@@ -44,6 +44,42 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""6dacb6b8-5bf2-4771-a84c-25eb4ec03eec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Secondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""b206511b-2e66-44e5-97b4-e66c71d293c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Space"",
+                    ""type"": ""Button"",
+                    ""id"": ""357e458e-4c0e-4c29-a2a7-67c84e02b357"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Wheel"",
+                    ""type"": ""Value"",
+                    ""id"": ""cf7a50c8-27c3-44da-9f80-91a64cc9f0fb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -112,6 +148,50 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d6a6593-0f0c-453c-8f6a-65cfe41dbac1"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f3177d0-20a1-4947-8303-7bdffcef2a66"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Secondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""196c398c-8e8e-4d2c-b7ef-c23bb0b10987"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Space"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b07f4af8-2ac5-43cd-95a5-372e93a4f1bc"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +202,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Secondary = m_Player.FindAction("Secondary", throwIfNotFound: true);
+        m_Player_Space = m_Player.FindAction("Space", throwIfNotFound: true);
+        m_Player_Wheel = m_Player.FindAction("Wheel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,12 +267,20 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
+    private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Secondary;
+    private readonly InputAction m_Player_Space;
+    private readonly InputAction m_Player_Wheel;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
+        public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Secondary => m_Wrapper.m_Player_Secondary;
+        public InputAction @Space => m_Wrapper.m_Player_Space;
+        public InputAction @Wheel => m_Wrapper.m_Player_Wheel;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -204,6 +296,18 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Secondary.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary;
+                @Secondary.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary;
+                @Secondary.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary;
+                @Space.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpace;
+                @Space.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpace;
+                @Space.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSpace;
+                @Wheel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWheel;
+                @Wheel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWheel;
+                @Wheel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWheel;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -214,6 +318,18 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
+                @Secondary.started += instance.OnSecondary;
+                @Secondary.performed += instance.OnSecondary;
+                @Secondary.canceled += instance.OnSecondary;
+                @Space.started += instance.OnSpace;
+                @Space.performed += instance.OnSpace;
+                @Space.canceled += instance.OnSpace;
+                @Wheel.started += instance.OnWheel;
+                @Wheel.performed += instance.OnWheel;
+                @Wheel.canceled += instance.OnWheel;
             }
         }
     }
@@ -222,5 +338,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
+        void OnSecondary(InputAction.CallbackContext context);
+        void OnSpace(InputAction.CallbackContext context);
+        void OnWheel(InputAction.CallbackContext context);
     }
 }
