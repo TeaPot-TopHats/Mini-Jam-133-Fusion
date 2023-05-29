@@ -13,7 +13,7 @@ public class PlayerData : MonoBehaviour
 	
 	public float MoveSpeed = 4.5f;
 	
-	public const int MAX_CHARGES = 3;
+	public int MAX_CHARGES = 3;
 	public ChargeType SelectedCharge = ChargeType.FIRE;
 	
 	public int FireCharge = 0;
@@ -31,10 +31,12 @@ public class PlayerData : MonoBehaviour
 	// [SerializeField] private GameObject GameManager;
 	// private WeatherTracker WeatherT;
 
-
 	private SpriteRenderer WeaponSprite;
 	
-	private ChargeType Dimension; 
+	private ChargeType Dimension;
+
+	// Score
+	public int Score = 0;
 
 	private void Start()
 	{
@@ -112,11 +114,11 @@ public class PlayerData : MonoBehaviour
 			}
 			else if (chargeType == ChargeType.ICE)
 			{
-                TakeDamage(weakDamage);
+				TakeDamage(weakDamage);
 			}
 			else if (chargeType == ChargeType.ELECTRIC)
 			{
-                TakeDamage(normalDamage);
+				TakeDamage(normalDamage);
 			}
 			else
 			{
@@ -127,15 +129,15 @@ public class PlayerData : MonoBehaviour
 		{
 			if (chargeType == ChargeType.FIRE)
 			{
-                TakeDamage(weakDamage);
+				TakeDamage(weakDamage);
 			}
 			else if (chargeType == ChargeType.ICE)
 			{
-                TakeDamage(strongDamage);
+				TakeDamage(strongDamage);
 			}
 			else if (chargeType == ChargeType.ELECTRIC)
 			{
-                TakeDamage(normalDamage);
+				TakeDamage(normalDamage);
 			}
 			else
 			{
@@ -146,15 +148,15 @@ public class PlayerData : MonoBehaviour
 		{
 			if (chargeType == ChargeType.FIRE)
 			{
-                TakeDamage(normalDamage);
+				TakeDamage(normalDamage);
 			}
 			else if (chargeType == ChargeType.ICE)
 			{
-                TakeDamage(weakDamage);
+				TakeDamage(weakDamage);
 			}
 			else if (chargeType == ChargeType.ELECTRIC)
 			{
-                TakeDamage(strongDamage);
+				TakeDamage(strongDamage);
 			}
 			else
 			{
@@ -312,5 +314,13 @@ public class PlayerData : MonoBehaviour
 	}
 	
 	
-
+	public void AddScore(int value)
+	{
+		Score += value;
+	}
+	
+	public int GetScore()
+	{
+		return Score;
+	}
 }

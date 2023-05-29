@@ -54,7 +54,7 @@ public class PlayerInputHandler : MonoBehaviour
 	float currentAngle;
 	Collider2D[] enemyColliders;
 	
-	public float MeleeRange = 30f;
+	public float MeleeRange = 60f;
 	public float MeleeReach = 2f;
 	public float AttackCooldown = 1f;
 

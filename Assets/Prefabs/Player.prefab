@@ -326,6 +326,7 @@ MonoBehaviour:
   CorrectAttack: 5
   ChargedAttack: 10
   MoveSpeed: 4.5
+  MAX_CHARGES: 3
   SelectedCharge: 0
   FireCharge: 3
   IceCharge: 3
@@ -361,7 +362,7 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  MeleeRange: 30
+  MeleeRange: 60
   MeleeReach: 2
   AttackCooldown: 1
 --- !u!1 &6340513916736047019
