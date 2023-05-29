@@ -26,12 +26,10 @@ public class PlayerData : MonoBehaviour
 	private Animator Anim;
 
 	private PlayerInputHandler InputH;
-	[SerializeField] private GameObject WeaponObject;
 	
 	// [SerializeField] private GameObject GameManager;
 	// private WeatherTracker WeatherT;
 
-	private SpriteRenderer WeaponSprite;
 	
 	private ChargeType Dimension;
 
@@ -42,9 +40,8 @@ public class PlayerData : MonoBehaviour
 	{
 		Sprite = GetComponent<SpriteRenderer>();
 		Rigid = GetComponent<Rigidbody2D>();
-		// Anim = GetComponent<Animator>();
+		Anim = GetComponent<Animator>();
 		InputH = GetComponent<PlayerInputHandler>();
-		WeaponSprite = WeaponObject.GetComponent<SpriteRenderer>();
 		
 		// WeatherT = GameManager.GetComponent<WeatherTracker>();
 	}
@@ -52,54 +49,52 @@ public class PlayerData : MonoBehaviour
 	private void FixedUpdate()
 	{
 		SpriteFlipCheck();
-		// MovementAnimationCheck();
+		MovementAnimationCheck();
 	}
 
 	private void SpriteFlipCheck()
 	{
 		if (InputH.AimVector.x < 0)
 		{
-			Sprite.flipX = false;
-			WeaponSprite.flipX = false;
+			Sprite.flipX = true;
 			// WeaponSprite.flipY = true;
 		}
 		else if (InputH.AimVector.x > 0)
 		{
-			Sprite.flipX = true;
-			WeaponSprite.flipX = true;
+			Sprite.flipX = false;
 			// WeaponSprite.flipY = false;
 
 		}
 	}
 
 
-	// private void MovementAnimationCheck()
-	// {
-	//     if (InputH.Movement == Vector2.zero)
-	//     {
-	//         Anim.SetBool("IsMoving", false);
-	//     }
-	//     else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) != 0f))
-	//     {
-	//         Anim.SetBool("IsMoving", true);
-	//     }
-	//     else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) == 0f))
-	//     {
-	//         Anim.SetBool("IsMoving", false);
-	//     }
-	//     else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) != 0f))
-	//     {
-	//         Anim.SetBool("IsMoving", true);
-	//     }
-	//     else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) == 0f))
-	//     {
-	//         Anim.SetBool("IsMoving", false);
-	//     }
-	//     else
-	//     {
-	//         Anim.SetBool("IsMoving", true);
-	//     }
-	// }
+	private void MovementAnimationCheck()
+	{
+	    if (InputH.Movement == Vector2.zero)
+	    {
+	        Anim.SetBool("IsMoving", false);
+	    }
+	    else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) != 0f))
+	    {
+	        Anim.SetBool("IsMoving", true);
+	    }
+	    else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) == 0f))
+	    {
+	        Anim.SetBool("IsMoving", false);
+	    }
+	    else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) != 0f))
+	    {
+	        Anim.SetBool("IsMoving", true);
+	    }
+	    else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) == 0f))
+	    {
+	        Anim.SetBool("IsMoving", false);
+	    }
+	    else
+	    {
+	        Anim.SetBool("IsMoving", true);
+	    }
+	}
 
 	public void Hurt(ChargeType chargeType, int weakDamage, int normalDamage, int strongDamage)
 	{
