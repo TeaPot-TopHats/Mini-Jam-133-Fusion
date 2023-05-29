@@ -18,7 +18,8 @@ public class NPCDeadState : IState
     {
         StateMachine.AnimationHandler.ChangeAnimationState("SlimeDead");
         GameObject.FindWithTag("Player").GetComponent<PlayerData>().AddScore(666);
-        StateMachine.DropItem();
+        if(Random.Range(0, 4) == 0 )
+            StateMachine.DropItem();
     }
 
     public void Exit()
