@@ -122,13 +122,13 @@ public class Spawner : MonoBehaviour
         switch (currentWeather)
         {
             case WeatherType.Sunny:
-                enemyType = EnemyType.Fire; // Spawn fire enemies for sunny weather
+                enemyType = EnemyType.ALL; // Spawn fire enemies for sunny weather
                 break;
             case WeatherType.Rainy:
-                enemyType = EnemyType.Ice; // Spawn ice enemies for rainy weather
+                enemyType = EnemyType.ALL; // Spawn ice enemies for rainy weather
                 break;
             case WeatherType.Stormy:
-                enemyType = EnemyType.Electric; // Spawn electric enemies for stormy weather
+                enemyType = EnemyType.ALL; // Spawn electric enemies for stormy weather
                 break;
             case WeatherType.All:
                 enemyType = EnemyType.ALL;

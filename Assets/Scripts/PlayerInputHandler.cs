@@ -61,6 +61,9 @@ public class PlayerInputHandler : MonoBehaviour
 	// Debug
 	bool drawMeleeGizmos = false;
 
+	// Damage Calculation
+	private ChargeType Dimension;
+	private ChargeType EnemyType;
 
 	private void Start()
 	{
@@ -179,7 +182,7 @@ public class PlayerInputHandler : MonoBehaviour
 				if (angleBetween < MeleeRange / 2)
 				{
 					// Do damage
-					
+					Damage(enemy);
 				}
 				Debug.Log("BFA: Angle between enemy and player aim is " + angleBetween);
 			}
@@ -216,13 +219,81 @@ public class PlayerInputHandler : MonoBehaviour
 				if (angleBetween < MeleeRange / 2)
 				{
 					// Do damage
-
+					enemy.GetComponent<NPCStateMachine>().Hurt(Data.ChargedAttack);
 				}
 				Debug.Log("BFA: Angle between enemy and player aim is " + angleBetween);
 			}
 
 			Data.RemoveCharge(Data.SelectedCharge);
 			StartCoroutine(Cooldown());
+		}
+	}
+	
+	private void Damage(Collider2D enemy)
+	{
+		NPCStateMachine E = enemy.GetComponent<NPCStateMachine>();
+		// Dimension =  Data.WeatherT.GetCurrentWeather();
+		Dimension = ChargeType.FIRE;
+		if (Dimension == ChargeType.FIRE)
+		{
+			if(enemy.tag == "Fire")
+			{
+				E.Hurt(Data.WeakAttack);
+			}
+			else if (enemy.tag == "Ice")
+			{
+				E.Hurt(Data.CorrectAttack);
+			}
+			else if (enemy.tag == "Electric")
+			{
+				E.Hurt(Data.NormalAttack);
+			}
+			else
+			{
+				Debug.LogError("DamageCalculation: Something went very wrong");
+			}
+		}
+		else if (Dimension == ChargeType.ICE)
+		{
+			if (enemy.tag == "Fire")
+			{
+				E.Hurt(Data.CorrectAttack);
+			}
+			else if (enemy.tag == "Ice")
+			{
+				E.Hurt(Data.WeakAttack);
+			}
+			else if (enemy.tag == "Electric")
+			{
+				E.Hurt(Data.NormalAttack);
+			}
+			else
+			{
+				Debug.LogError("DamageCalculation: Something went very wrong");
+			}
+		}
+		else if (Dimension == ChargeType.ELECTRIC)
+		{
+			if (enemy.tag == "Fire")
+			{
+				E.Hurt(Data.NormalAttack);
+			}
+			else if (enemy.tag == "Ice")
+			{
+				E.Hurt(Data.CorrectAttack);
+			}
+			else if (enemy.tag == "Electric")
+			{
+				E.Hurt(Data.WeakAttack);
+			}
+			else
+			{
+				Debug.LogError("DamageCalculation: Something went very wrong");
+			}
+		}
+		else
+		{
+			Debug.LogError("DamageCalculation: Something went very wrong");
 		}
 	}
 	
@@ -254,7 +325,7 @@ public class PlayerInputHandler : MonoBehaviour
 	{
 		if(context.started)
 		{
-			
+			Data.JumpDimension();
 		}
 	}
 	
