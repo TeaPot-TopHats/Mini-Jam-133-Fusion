@@ -50391,6 +50391,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6340513915766126547, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340513915766126547, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_Size.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340513915766126547, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1951042050, guid: e947c74b98bdcfb44b89970e7920b0c5, type: 3}
+    - target: {fileID: 6340513915766126547, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6340513915766126549, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: RealCursor
       value: 
@@ -50411,6 +50427,10 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 484079780}
+    - target: {fileID: 6340513915766126550, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
+      propertyPath: deathSprite
+      value: 
+      objectReference: {fileID: 643747117, guid: e947c74b98bdcfb44b89970e7920b0c5, type: 3}
     - target: {fileID: 6340513915766126550, guid: 36f15e3420f50f445a5cbf0982ddb6bc, type: 3}
       propertyPath: NormalAttack
       value: 8

@@ -31,7 +31,7 @@ public class PoolSystem : MonoBehaviour
 
     private void Update()
     {
-        GetTotalEnemies();
+        // GetTotalEnemies();
     }
 
     public int GetTotalEnemies()

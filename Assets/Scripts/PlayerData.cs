@@ -209,7 +209,7 @@ public class PlayerData : MonoBehaviour
 			InputH.canAttack = false;
 			InputH.CursorLimit = false;
 			
-			
+			Anim.SetTrigger("Death");
 		}
 	}
 	
