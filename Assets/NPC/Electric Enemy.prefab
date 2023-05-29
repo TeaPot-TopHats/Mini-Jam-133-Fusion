@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 676184006731078189}
   - component: {fileID: 676184006731078190}
   - component: {fileID: 4700694757750100555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electric Enemy
   m_TagString: Electric
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676184008139881075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
