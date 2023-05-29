@@ -55,7 +55,7 @@ public class PlayerInputHandler : MonoBehaviour
 	
 	public float MeleeRange = 90f;
 	public float MeleeReach = 2f;
-	public float AttackCooldown = 1f;
+	public float AttackCooldown = 0.5f;
 
 	// Debug
 	bool drawMeleeGizmos = false;
@@ -181,6 +181,7 @@ public class PlayerInputHandler : MonoBehaviour
 				Debug.Log("BFA: Angle between enemy and player aim is " + angleBetween);
 			}
 
+			Data.Anim.SetTrigger("Attack");			
 			StartCoroutine(Cooldown());
 		}
 	}
@@ -218,6 +219,7 @@ public class PlayerInputHandler : MonoBehaviour
 				Debug.Log("BFA: Angle between enemy and player aim is " + angleBetween);
 			}
 
+			Data.Anim.SetTrigger("Attack");
 			Data.RemoveCharge(Data.SelectedCharge);
 			StartCoroutine(Cooldown());
 		}
