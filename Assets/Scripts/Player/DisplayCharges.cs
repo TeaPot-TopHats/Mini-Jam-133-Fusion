@@ -9,6 +9,7 @@ public class DisplayCharges : MonoBehaviour
     public TextMeshProUGUI fireChargeText;
     public TextMeshProUGUI IceChargeText;
     public TextMeshProUGUI ThunderChargeText;
+    public TextMeshProUGUI chargeSelectedText;
 
     // Start is called before the first frame update
 
@@ -18,5 +19,6 @@ public class DisplayCharges : MonoBehaviour
         fireChargeText.text = playerData.FireCharge.ToString();
         IceChargeText.text = playerData.IceCharge.ToString();
         ThunderChargeText.text = playerData.ElectricCharge.ToString();
+        chargeSelectedText.text = playerData.SelectedCharge.ToString(); 
     }
 }
