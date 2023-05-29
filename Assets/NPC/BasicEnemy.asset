@@ -16,7 +16,7 @@ MonoBehaviour:
   initWeakAttack: 1
   initNormalAttack: 2
   initStrongAttack: 3
-  initSpeed: 10
+  initSpeed: 20
   initDefense: 0
   initAtkCoolDown: 2
   initIFrames: 2
