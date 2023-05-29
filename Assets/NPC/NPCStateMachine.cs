@@ -20,10 +20,35 @@ public class NPCStateMachine : StateMachine
 
     [SerializeField] Transform RangeTransformer;
 
+    public NPCAnimationHandler AnimationHandler { get; private set; }
+    [SerializeField] Animator Animator;
+    public SpriteRenderer Renderer;
+
+    ChargeType Type;
+
     private void Awake()
     {
+        switch (this.gameObject.tag)
+        {
+            case "Fire":
+                Type = ChargeType.FIRE;
+                Renderer.color = new Color(255, 0, 0, 255);
+                break;
+            case "Ice":
+                Type = ChargeType.ICE;
+                Renderer.color = new Color(0, 163, 255, 255);
+                break;
+            case "Electric":
+                Type = ChargeType.ELECTRIC;
+                Renderer.color = new Color(255, 211, 0, 255);
+                break;
+            default:
+                break;
+        }
+
         MovementHandler = new NPCMovementHandler(RB);
         Pathfinder.SetMovementHandler(MovementHandler);
+        AnimationHandler = new NPCAnimationHandler(Animator);
 
         IdleState = new NPCIdleState(this);
         ChasingState = new NPCChasingState(this);
@@ -71,6 +96,17 @@ public class NPCStateMachine : StateMachine
     {
         if (Stats.atkCoolDown < Stats.StartingStat.initAtkCoolDown)
             Stats.atkCoolDown += Time.deltaTime;
+    }
+
+    public void AttackPlayer()
+    {
+        GameObject.FindWithTag("Player").GetComponent<PlayerData>().Hurt(Type, Stats.weakAttack, Stats.normalAttack, Stats.strongAttack);
+    }
+
+    public void EndAttack()
+    {
+        RevertState();
+        AnimationHandler.ChangeAnimationState("SlimeIdle");
     }
 
     private void OnDrawGizmos()
