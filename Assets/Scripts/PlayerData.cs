@@ -23,7 +23,7 @@ public class PlayerData : MonoBehaviour
 
 	private SpriteRenderer Sprite;
 	private Rigidbody2D Rigid;
-	private Animator Anim;
+	public Animator Anim;
 
 	private PlayerInputHandler InputH;
 	
@@ -57,12 +57,10 @@ public class PlayerData : MonoBehaviour
 		if (InputH.AimVector.x < 0)
 		{
 			Sprite.flipX = true;
-			// WeaponSprite.flipY = true;
 		}
 		else if (InputH.AimVector.x > 0)
 		{
 			Sprite.flipX = false;
-			// WeaponSprite.flipY = false;
 
 		}
 	}
@@ -70,30 +68,30 @@ public class PlayerData : MonoBehaviour
 
 	private void MovementAnimationCheck()
 	{
-	    if (InputH.Movement == Vector2.zero)
-	    {
-	        Anim.SetBool("IsMoving", false);
-	    }
-	    else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) != 0f))
-	    {
-	        Anim.SetBool("IsMoving", true);
-	    }
-	    else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) == 0f))
-	    {
-	        Anim.SetBool("IsMoving", false);
-	    }
-	    else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) != 0f))
-	    {
-	        Anim.SetBool("IsMoving", true);
-	    }
-	    else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) == 0f))
-	    {
-	        Anim.SetBool("IsMoving", false);
-	    }
-	    else
-	    {
-	        Anim.SetBool("IsMoving", true);
-	    }
+		if (InputH.Movement == Vector2.zero)
+		{
+			Anim.SetBool("IsMoving", false);
+		}
+		else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) != 0f))
+		{
+			Anim.SetBool("IsMoving", true);
+		}
+		else if ((InputH.Movement.y != 0 && Rigid.velocity.y == 0) && (Mathf.Abs(Rigid.velocity.x) == 0f))
+		{
+			Anim.SetBool("IsMoving", false);
+		}
+		else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) != 0f))
+		{
+			Anim.SetBool("IsMoving", true);
+		}
+		else if ((InputH.Movement.x != 0 && Rigid.velocity.x == 0) && (Mathf.Abs(Rigid.velocity.y) == 0f))
+		{
+			Anim.SetBool("IsMoving", false);
+		}
+		else
+		{
+			Anim.SetBool("IsMoving", true);
+		}
 	}
 
 	public void Hurt(ChargeType chargeType, int weakDamage, int normalDamage, int strongDamage)
@@ -283,6 +281,7 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.FIRE);
 			}
+			Anim.SetTrigger("Jump");
 		}
 		else if (SelectedCharge == ChargeType.ICE && IceCharge == MAX_CHARGES)
 		{
@@ -292,6 +291,7 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.ICE);
 			}
+			Anim.SetTrigger("Jump");
 		}
 		else if (SelectedCharge == ChargeType.ELECTRIC && ElectricCharge == MAX_CHARGES)
 		{
@@ -301,6 +301,7 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.ELECTRIC);
 			}
+            Anim.SetTrigger("Jump");
 		}
 		else
 		{
