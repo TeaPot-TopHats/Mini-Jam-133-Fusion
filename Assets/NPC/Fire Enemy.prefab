@@ -141,6 +141,7 @@ MonoBehaviour:
   RangeTransformer: {fileID: 5214729936511042804}
   Animator: {fileID: 1603300556}
   Renderer: {fileID: 5214729937338868902}
+  Drop: {fileID: 8828671449214527169, guid: a57d0c8f7a6dd3845b5c5f295b000716, type: 3}
 --- !u!114 &5214729937338868899
 MonoBehaviour:
   m_ObjectHideFlags: 0

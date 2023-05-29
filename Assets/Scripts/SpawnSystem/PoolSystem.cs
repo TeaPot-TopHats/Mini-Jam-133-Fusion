@@ -84,7 +84,13 @@ public class PoolSystem : MonoBehaviour
             case EnemyType.Electric:
                 return new GameObject[] { electricEnemyPrefab };
             case EnemyType.ALL:
-                return new GameObject[] { fireEnemyPrefab, iceEnemyPrefab, electricEnemyPrefab };
+                int num = Random.Range(0, 3);
+                if(num == 0)
+                    return new GameObject[] { fireEnemyPrefab };
+                else if(num == 1)
+                    return new GameObject[] { iceEnemyPrefab };
+                else
+                    return new GameObject[] { electricEnemyPrefab };
             default:
                 Debug.LogError("Unknown enemy type: " + enemyType.ToString());
                 return null;

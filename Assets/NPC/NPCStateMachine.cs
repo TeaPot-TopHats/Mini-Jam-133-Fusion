@@ -26,25 +26,27 @@ public class NPCStateMachine : StateMachine
 
 	ChargeType Type;
 
-	private void Awake()
-	{
-		switch (this.gameObject.tag)
-		{
-			case "Fire":
-				Type = ChargeType.FIRE;
-				Renderer.color = new Color(255, 0, 0, 255);
-				break;
-			case "Ice":
-				Type = ChargeType.ICE;
-				Renderer.color = new Color(0, 163, 255, 255);
-				break;
-			case "Electric":
-				Type = ChargeType.ELECTRIC;
-				Renderer.color = new Color(255, 211, 0, 255);
-				break;
-			default:
-				break;
-		}
+    public GameObject Drop;
+
+    private void Awake()
+    {
+        switch (this.gameObject.tag)
+        {
+            case "Fire":
+                Type = ChargeType.FIRE;
+                Renderer.color = new Color(255, 0, 0, 255);
+                break;
+            case "Ice":
+                Type = ChargeType.ICE;
+                Renderer.color = new Color(0, 163, 255, 255);
+                break;
+            case "Electric":
+                Type = ChargeType.ELECTRIC;
+                Renderer.color = new Color(255, 211, 0, 255);
+                break;
+            default:
+                break;
+        }
 
 		MovementHandler = new NPCMovementHandler(RB);
 		Pathfinder.SetMovementHandler(MovementHandler);
@@ -115,9 +117,17 @@ public class NPCStateMachine : StateMachine
 		this.gameObject.SetActive(false);
 	}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(RangeTransformer.position, Stats.range);
-	}
+    public void DropItem()
+    {
+        GameObject tmp = Instantiate(Drop);
+        tmp.transform.position = this.gameObject.transform.position;
+
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(RangeTransformer.position, Stats.range);
+    }
 }
