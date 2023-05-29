@@ -109,6 +109,11 @@ public class NPCStateMachine : StateMachine
         AnimationHandler.ChangeAnimationState("SlimeIdle");
     }
 
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

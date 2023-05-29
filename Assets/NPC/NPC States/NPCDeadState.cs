@@ -17,12 +17,14 @@ public class NPCDeadState : IState
     public void Enter()
     {
         StateMachine.AnimationHandler.ChangeAnimationState("SlimeDead");
+        GameObject.FindWithTag("Player").GetComponent<PlayerData>().AddScore(666);
+
     }
 
     public void Exit()
     {
         timer = 0;
-        Debug.Log("Yo I'm dead, do something");
+        StateMachine.Die();
     }
 
     public void FixedTick()
