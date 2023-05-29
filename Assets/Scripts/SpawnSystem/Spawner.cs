@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
 
-        weatherTracker.UpdateWeather(ChargeType.FIRE); // make a variable to change depedning on jump dimension used
+        // weatherTracker.UpdateWeather(ChargeType.FIRE); // make a variable to change depedning on jump dimension used
 
 
         if (spawnCountdown <= 0)
@@ -115,26 +115,23 @@ public class Spawner : MonoBehaviour
     {
         // Implement your logic here to determine the enemy type based on weather or tracker
         // Return the appropriate enemy type
-        WeatherType currentWeather = weatherTracker.GetCurrentWeather(); // get the current weather.
+        ChargeType currentWeather = weatherTracker.GetCurrentWeather(); // get the current weather.
 
         EnemyType enemyType;
 
         switch (currentWeather)
         {
-            case WeatherType.Sunny:
+            case ChargeType.FIRE:
                 enemyType = EnemyType.ALL; // Spawn fire enemies for sunny weather
                 break;
-            case WeatherType.Rainy:
+            case ChargeType.ICE:
                 enemyType = EnemyType.ALL; // Spawn ice enemies for rainy weather
                 break;
-            case WeatherType.Stormy:
+            case ChargeType.ELECTRIC:
                 enemyType = EnemyType.ALL; // Spawn electric enemies for stormy weather
                 break;
-            case WeatherType.All:
-                enemyType = EnemyType.ALL;
-                break;
             default: // Default to fire enemies if weather is unknown or not accounted for
-                enemyType = EnemyType.Fire;
+                enemyType = EnemyType.ALL;
                 break;
         }
 

@@ -27,8 +27,8 @@ public class PlayerData : MonoBehaviour
 
 	private PlayerInputHandler InputH;
 	
-	// [SerializeField] private GameObject GameManager;
-	// private WeatherTracker WeatherT;
+	[SerializeField] private GameObject GameManager;
+	private WeatherTracker WeatherT;
 
 	
 	private ChargeType Dimension;
@@ -36,14 +36,27 @@ public class PlayerData : MonoBehaviour
 	// Score
 	public int Score = 0;
 
+	// other
+	GameObject map1;
+	GameObject map2;
+	GameObject map3;
+
 	private void Start()
 	{
 		Sprite = GetComponent<SpriteRenderer>();
 		Rigid = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
 		InputH = GetComponent<PlayerInputHandler>();
-		
-		// WeatherT = GameManager.GetComponent<WeatherTracker>();
+
+		WeatherT = GameManager.GetComponent<WeatherTracker>();
+
+		map1 = GameObject.FindGameObjectWithTag("Map");
+		map2 = GameObject.FindGameObjectWithTag("Map2");
+		map3 = GameObject.FindGameObjectWithTag("Map3");
+
+		map1.GetComponent<ChangeDimension>().DimensionShift(ChargeType.FIRE);
+		map2.GetComponent<ChangeDimension>().DimensionShift(ChargeType.FIRE);
+		map3.GetComponent<ChangeDimension>().DimensionShift(ChargeType.FIRE);
 	}
 
 	private void Update()
@@ -56,10 +69,10 @@ public class PlayerData : MonoBehaviour
 		{
 			Sprite.color = new Color(0, 163, 255, 255);
 		}
-        else if (SelectedCharge == ChargeType.ELECTRIC)
-        {
-            Sprite.color = new Color(255, 211, 0, 255);
-        }
+		else if (SelectedCharge == ChargeType.ELECTRIC)
+		{
+			Sprite.color = new Color(255, 211, 0, 255);
+		}
 	}
 	
 	private void FixedUpdate()
@@ -113,8 +126,8 @@ public class PlayerData : MonoBehaviour
 
 	public void Hurt(ChargeType chargeType, int weakDamage, int normalDamage, int strongDamage)
 	{
-		Debug.LogError("Damage");
-		// Dimension =  Data.WeatherT.GetCurrentWeather();
+		Debug.LogWarning("Damage");
+		Dimension =  WeatherT.GetCurrentWeather();
 		Dimension = ChargeType.FIRE;
 		if (Dimension == ChargeType.FIRE)
 		{
@@ -195,6 +208,8 @@ public class PlayerData : MonoBehaviour
 			InputH.canLook = false;
 			InputH.canAttack = false;
 			InputH.CursorLimit = false;
+			
+			Anim.SetTrigger("Death");
 		}
 	}
 	
@@ -288,9 +303,9 @@ public class PlayerData : MonoBehaviour
 	
 	public void JumpDimension()
 	{
+		
 
-		// && WeatherT.GetCurrentWeather != ChargeType.FIRE
-		if (SelectedCharge == ChargeType.FIRE && FireCharge == MAX_CHARGES)
+		if (SelectedCharge == ChargeType.FIRE && FireCharge == MAX_CHARGES && WeatherT.GetCurrentWeather() != ChargeType.FIRE)
 		{
 			Debug.LogWarning("Jumped to FIRE");
 			// WeatherT.UpdateWeather(ChargeType.FIRE);
@@ -298,9 +313,13 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.FIRE);
 			}
+			WeatherT.UpdateWeather(ChargeType.FIRE);
+			map1.GetComponent<ChangeDimension>().DimensionShift(ChargeType.FIRE);
+			map2.GetComponent<ChangeDimension>().DimensionShift(ChargeType.FIRE);
+			map3.GetComponent<ChangeDimension>().DimensionShift(ChargeType.FIRE);
 			Anim.SetTrigger("Jump");
 		}
-		else if (SelectedCharge == ChargeType.ICE && IceCharge == MAX_CHARGES)
+		else if (SelectedCharge == ChargeType.ICE && IceCharge == MAX_CHARGES && WeatherT.GetCurrentWeather() != ChargeType.ICE)
 		{
 			Debug.LogWarning("Jumped to ICE");
 			// WeatherT.UpdateWeather(ChargeType.ICE);
@@ -308,9 +327,13 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.ICE);
 			}
+			WeatherT.UpdateWeather(ChargeType.ICE);
+			map1.GetComponent<ChangeDimension>().DimensionShift(ChargeType.ICE);
+			map2.GetComponent<ChangeDimension>().DimensionShift(ChargeType.ICE);
+			map3.GetComponent<ChangeDimension>().DimensionShift(ChargeType.ICE);
 			Anim.SetTrigger("Jump");
 		}
-		else if (SelectedCharge == ChargeType.ELECTRIC && ElectricCharge == MAX_CHARGES)
+		else if (SelectedCharge == ChargeType.ELECTRIC && ElectricCharge == MAX_CHARGES && WeatherT.GetCurrentWeather() != ChargeType.ELECTRIC)
 		{
 			Debug.LogWarning("Jumped to ELECTRIC");
 			// WeatherT.UpdateWeather(ChargeType.ELECTRIC);
@@ -318,6 +341,10 @@ public class PlayerData : MonoBehaviour
 			{
 				RemoveCharge(ChargeType.ELECTRIC);
 			}
+			WeatherT.UpdateWeather(ChargeType.ELECTRIC);
+			map1.GetComponent<ChangeDimension>().DimensionShift(ChargeType.ELECTRIC);
+			map2.GetComponent<ChangeDimension>().DimensionShift(ChargeType.ELECTRIC);
+			map3.GetComponent<ChangeDimension>().DimensionShift(ChargeType.ELECTRIC);
 			Anim.SetTrigger("Jump");
 		}
 		else
