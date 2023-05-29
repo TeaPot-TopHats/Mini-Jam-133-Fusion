@@ -79,12 +79,7 @@ public class PlayerInputHandler : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		// Movement
-		if (isDashing)
-		{
-			return;
-		}
-		
+		// Movement		
 		if (canMove)
 		{
 			Vector2 targetSpeed = new Vector2(Movement.x * Data.MoveSpeed, Movement.y * Data.MoveSpeed);
@@ -231,6 +226,7 @@ public class PlayerInputHandler : MonoBehaviour
 	
 	private void Damage(Collider2D enemy)
 	{
+		Debug.LogError("Damage");
 		NPCStateMachine E = enemy.GetComponent<NPCStateMachine>();
 		// Dimension =  Data.WeatherT.GetCurrentWeather();
 		Dimension = ChargeType.FIRE;

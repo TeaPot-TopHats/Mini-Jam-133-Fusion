@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-	public int Health = 10;
-	public int WeakAttack = 2;
-	public int NormalAttack = 4;
-	public int CorrectAttack = 5;
+	public int Health = 20;
+	public int WeakAttack = 4;
+	public int NormalAttack = 8;
+	public int CorrectAttack = 10;
 	
-	public int ChargedAttack = 10;
+	public int ChargedAttack = 20;
 	
 	public float MoveSpeed = 4.5f;
 	
@@ -33,6 +33,8 @@ public class PlayerData : MonoBehaviour
 
 
 	private SpriteRenderer WeaponSprite;
+	
+	private ChargeType Dimension; 
 
 	private void Start()
 	{
@@ -97,15 +99,91 @@ public class PlayerData : MonoBehaviour
 	//     }
 	// }
 
-	public void TakeDamage()
+	public void Hurt(ChargeType chargeType, int weakDamage, int normalDamage, int strongDamage)
 	{
-		// here
+		Debug.LogError("Damage");
+		// Dimension =  Data.WeatherT.GetCurrentWeather();
+		Dimension = ChargeType.FIRE;
+		if (Dimension == ChargeType.FIRE)
+		{
+			if (chargeType == ChargeType.FIRE)
+			{
+				TakeDamage(strongDamage);
+			}
+			else if (chargeType == ChargeType.ICE)
+			{
+                TakeDamage(weakDamage);
+			}
+			else if (chargeType == ChargeType.ELECTRIC)
+			{
+                TakeDamage(normalDamage);
+			}
+			else
+			{
+				Debug.LogError("DamageCalculation: Something went very wrong");
+			}
+		}
+		else if (Dimension == ChargeType.ICE)
+		{
+			if (chargeType == ChargeType.FIRE)
+			{
+                TakeDamage(weakDamage);
+			}
+			else if (chargeType == ChargeType.ICE)
+			{
+                TakeDamage(strongDamage);
+			}
+			else if (chargeType == ChargeType.ELECTRIC)
+			{
+                TakeDamage(normalDamage);
+			}
+			else
+			{
+				Debug.LogError("DamageCalculation: Something went very wrong");
+			}
+		}
+		else if (Dimension == ChargeType.ELECTRIC)
+		{
+			if (chargeType == ChargeType.FIRE)
+			{
+                TakeDamage(normalDamage);
+			}
+			else if (chargeType == ChargeType.ICE)
+			{
+                TakeDamage(weakDamage);
+			}
+			else if (chargeType == ChargeType.ELECTRIC)
+			{
+                TakeDamage(strongDamage);
+			}
+			else
+			{
+				Debug.LogError("DamageCalculation: Something went very wrong");
+			}
+		}
+		else
+		{
+			Debug.LogError("DamageCalculation: Something went very wrong");
+		}
+	}
+	
+	private void TakeDamage(int damage)
+	{
+		Health -= damage;
 		CheckDeath();
 	}
 	
 	private void CheckDeath()
 	{
-		
+		if(Health <= 0)
+		{
+			Debug.LogWarning("Player is Dead");
+
+			InputH.canMove = false;
+			InputH.canLook = false;
+			InputH.canAttack = false;
+			InputH.CursorLimit = false;
+		}
 	}
 	
 	public void AddCharge(ChargeType type)

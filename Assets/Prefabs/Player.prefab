@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 165264371}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 6340513915766126551}
   - component: {fileID: 6340513915766126550}
   - component: {fileID: 6340513915766126549}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -321,8 +321,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
-  Attack: 5
-  Defense: 5
+  WeakAttack: 2
+  NormalAttack: 4
+  CorrectAttack: 5
+  ChargedAttack: 10
   MoveSpeed: 4.5
   SelectedCharge: 0
   FireCharge: 3
@@ -372,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6340513916736047013}
   - component: {fileID: 6340513916736047012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +459,7 @@ GameObject:
   - component: {fileID: 6340513917414603358}
   - component: {fileID: 6340513917414603356}
   - component: {fileID: 6340513917414603357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
