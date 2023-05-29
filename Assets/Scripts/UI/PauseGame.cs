@@ -10,6 +10,7 @@ public class PauseGame : MonoBehaviour
     private void Start()
     {
         isPaused = true;
+        Time.timeScale = 0f;
         UnlockMouseCursor();
     }
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class PauseGame : MonoBehaviour
             if (isPaused)
             {
                 Resume();
-                LockMouseCursor();
+               
             }
             else
             {
@@ -30,7 +31,6 @@ public class PauseGame : MonoBehaviour
                 
         }
     }
-
     /*
      * A method that disable open object and reset flow time to noraml 
      */
