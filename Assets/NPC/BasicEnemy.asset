@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09654427c83a4034eb5e16900b74f38e, type: 3}
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
-  initHealth: 10
-  initAttack: 10
+  initHealth: 20
+  initWeakAttack: 1
+  initNormalAttack: 2
+  initStrongAttack: 3
   initSpeed: 10
-  initDefense: 10
+  initDefense: 0
   initAtkCoolDown: 2
   initIFrames: 2
   initDeathTime: 2
