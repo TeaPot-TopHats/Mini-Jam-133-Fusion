@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
 	public int Health = 10;
-	public int Attack = 5;
-	public int Defense = 5;
+	public int WeakAttack = 2;
+	public int NormalAttack = 4;
+	public int CorrectAttack = 5;
+	
+	public int ChargedAttack = 10;
 	
 	public float MoveSpeed = 4.5f;
 	
@@ -24,6 +27,9 @@ public class PlayerData : MonoBehaviour
 
 	private PlayerInputHandler InputH;
 	[SerializeField] private GameObject WeaponObject;
+	
+	// [SerializeField] private GameObject GameManager;
+	// private WeatherTracker WeatherT;
 
 
 	private SpriteRenderer WeaponSprite;
@@ -35,6 +41,8 @@ public class PlayerData : MonoBehaviour
 		// Anim = GetComponent<Animator>();
 		InputH = GetComponent<PlayerInputHandler>();
 		WeaponSprite = WeaponObject.GetComponent<SpriteRenderer>();
+		
+		// WeatherT = GameManager.GetComponent<WeatherTracker>();
 	}
 
 	private void FixedUpdate()
@@ -190,8 +198,12 @@ public class PlayerData : MonoBehaviour
 	
 	public void JumpDimension()
 	{
+
+		// && WeatherT.GetCurrentWeather != ChargeType.FIRE
 		if (SelectedCharge == ChargeType.FIRE && FireCharge == MAX_CHARGES)
 		{
+			Debug.LogWarning("Jumped to FIRE");
+			// WeatherT.UpdateWeather(ChargeType.FIRE);
 			for (int i = 0; i < MAX_CHARGES; i++)
 			{
 				RemoveCharge(ChargeType.FIRE);
@@ -199,6 +211,8 @@ public class PlayerData : MonoBehaviour
 		}
 		else if (SelectedCharge == ChargeType.ICE && IceCharge == MAX_CHARGES)
 		{
+			Debug.LogWarning("Jumped to ICE");
+			// WeatherT.UpdateWeather(ChargeType.ICE);
 			for (int i = 0; i < MAX_CHARGES; i++)
 			{
 				RemoveCharge(ChargeType.ICE);
@@ -206,6 +220,8 @@ public class PlayerData : MonoBehaviour
 		}
 		else if (SelectedCharge == ChargeType.ELECTRIC && ElectricCharge == MAX_CHARGES)
 		{
+			Debug.LogWarning("Jumped to ELECTRIC");
+			// WeatherT.UpdateWeather(ChargeType.ELECTRIC);
 			for (int i = 0; i < MAX_CHARGES; i++)
 			{
 				RemoveCharge(ChargeType.ELECTRIC);
@@ -213,7 +229,7 @@ public class PlayerData : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogError("JumpDimension");
+			Debug.Log("JumpDimension not available");
 		}
 	}
 	
