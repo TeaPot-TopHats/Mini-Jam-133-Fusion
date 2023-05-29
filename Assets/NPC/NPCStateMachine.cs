@@ -26,6 +26,8 @@ public class NPCStateMachine : StateMachine
 
     ChargeType Type;
 
+    public GameObject Drop;
+
     private void Awake()
     {
         switch (this.gameObject.tag)
@@ -112,6 +114,14 @@ public class NPCStateMachine : StateMachine
     public void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    public void DropItem()
+    {
+        GameObject tmp = Instantiate(Drop);
+        tmp.transform.position = this.gameObject.transform.position;
+
+
     }
 
     private void OnDrawGizmos()
