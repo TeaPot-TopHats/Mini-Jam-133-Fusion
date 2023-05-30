@@ -193,15 +193,14 @@ public class PlayerInputHandler : MonoBehaviour
 
 			Time.timeScale = 0;
 
-
-
 			//Scene scene = SceneManager.GetActiveScene(); 
 
 			SceneManager.LoadScene("Main");
 			AM.Stop("HuntingYourMom");
 			AM.Play("Theme_Test");
+            AM.updateMixerVolume();
 
-		}
+        }
 	}
 
 	public void OnSecondary(InputAction.CallbackContext context)
