@@ -244,7 +244,7 @@ public class PlayerInputHandler : MonoBehaviour
 	
 	private void Damage(Collider2D enemy)
 	{
-		Debug.LogError("Damage");
+		Debug.LogWarning("Damage");
 		NPCStateMachine E = enemy.GetComponent<NPCStateMachine>();
 		// Dimension =  Data.WeatherT.GetCurrentWeather();
 		Dimension = ChargeType.FIRE;
